@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/options/options.css">
+    <title>my sharpie options</title>
+</head>
+
+<body>
+    <div id="main">
+        <div class="options">
+            <h1>My sharpie Options</h1>
+            <h2>Set Defaults</h2>
+            <h3>Highlighter Thickness:</h3>
+            <input class="mySharpie_slider" type="range" id="mySharpie_thicknessSlider2" max="50" min="1">
+            <div id="val">
+                <p id="px2"></p>
+            </div>
+            <h3>Text Size:</h3>
+            <input class="mySharpie_slider" type="range" id="mySharpie_thicknessSlider4" max="50" min="1">
+            <div id="val">
+                <p id="px4"></p>
+            </div>
+
+            <h3>Eraser Thickness:</h3>
+            <input class="mySharpie_slider" type="range" id="mySharpie_thicknessSlider3" max="50" min="1">
+            <div id="val">
+                <p id="px3"></p>
+            </div>
+            <h3>Pen Thickness:</h3>
+            <input class="mySharpie_slider" type="range" id="mySharpie_thicknessSlider1" max="50" min="1">
+            <div id="val">
+                <p id="px1"></p>
+            </div>
+            <h3>Default Color:</h3>
+            <input id="mySharpie_colorChooser" name="color" type="color">
+
+            <button class="mySharpie_button" id="saveValuesBtn">Save values</button>
+            <div id="status">
+                <p id="saved"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1 id="modalHeader">Feature locked</h1>
+        <p id="modalText">
+            activate a premium subscription
+        </p>
+        <button id=accountState data-link=""> activate </button>
+
+    </div>
+    <div class="overlay hidden">
+
+        <script src="/options/options.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+body {
+  background-color: rgb(0, 117, 255);
+}
+
+  /* CLASSES TO MAKE MODAL WORK */
+  .hidden {
+    display: none;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 5px;
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+    z-index: 10;
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    color: #333;
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 5;
+  }
+
+  button {
+    background-color: #000000; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+  }
+  
+  button:hover {
+    background: rgba(32, 24, 19, 0.05)!important;
+  }
+
+
+  /*css for the rest of the options page*/
+div.options {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f9f9f9;
+    box-shadow: 5px 5px 12px 0px rgba(158, 157, 157, 0.75);
+
+  }
+
+  #main {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -53%);
+    text-align: center;
+    width: 80%;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 800;
+    font-family: Arial !important;
+  }
+
+  h1 {
+    margin: 5px 0px 2px;
+  }
+
+  h3 {
+    margin: 20px 0px 2px;
+  }
+
+  #val p {
+    margin-top: 0px;
+    vertical-align: middle;
+  }
+
+  #saved {
+    display: block;
+  }
+
+  #mySharpie_colorChooser {
+    width: 60%;
+    background-color: transparent;
+    height: 35px !important;
+    line-height: 1.0 !important;
+    border-radius: 2px !important;
+    border: 1px !important;
+    box-shadow: none !important;
+    padding: 0px;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin: 0;
+  }
+
+  p {
+    font-family: Arial !important;
+    font-size: 14px;
+  }
+
+  .mySharpie_button {
+    width: 60% !important;
+    background: transparent !important;
+    font-style: normal !important;
+    display: inline !important;
+    box-shadow: none !important;
+    font-family: 'Arial' !important;
+    font-weight: 800 !important;
+    font-size: 12px !important;
+    text-transform: uppercase !important;
+    color: rgb(0, 0, 0) !important;
+    border: 1px solid grey !important;
+    border-radius: 10px !important;
+    padding: 0px !important;
+    cursor: pointer !important;
+    height: 25px !important;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    user-select: none !important;
+    outline: none !important;
+    position: relative !important;
+    z-index: 2;
+    box-sizing: border-box !important;
+    transition: none !important;
+    text-align: center !important;
+    line-height: 25px !important;
+    margin: 2px auto auto 0px !important;
+    -webkit-font-smoothing: antialiased !important;
+  }
+
+  .mySharpie_button:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .mySharpie_slider {
+    width: 60%;
+  }
