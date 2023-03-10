@@ -1,26 +1,71 @@
-let isFabricActive = {}
+let fabricObj = {}
 
-chrome.action.onClicked.addListener((tab) => {
+chrome.action.onClicked.addListener(async (tab) => {
+
+    try {
+
+        if (fabricObj[tab.id] === null || !fabricObj[tab.id]) {
+            fabricObj[tab.id] = true;
+
+            await chrome.scripting.executeScript({
+                target: { tabId: tab.id },
+                files: ["/content/fabric.min.js"]
+            })
+
+            await addMainContentScript(tab)
+
+        }
+
+        else {
+            await addMainContentScript(tab)
+        }
+    } catch (error) {
+        console.log(error);
+
+    }
 
 })
 
 
-function addMainContentScript() {
+async function addMainContentScript(tab) {
+
+    try {
+        await chrome.scripting.insertCSS({
+            target: { tabId: tab.id },
+            files: ['/content/content-style.css']
+        })
+
+        await chrome.scripting.executeScript({
+            target: { tabId: tab.id },
+            files: ['/content/content-script.js']
+        })
+
+    } catch (error) {
+        console.log(error);
+
+    }
+
 
 }
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
+    fabricObj[tabId] = false
 
 })
 
 chrome.tabs.onRemoved.addListener(function (tabId, removeInfo) {
 
+    delete fabricObj[tabId]
+
 })
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
-    if (request.message === "from-content-script") {
 
+    if (request.message === "from-content-script") {
+        chrome.tabs.captureVisibleTab(null, {}, function (image) {
+            sendResponse({ screenshot: image })
+        })
     }
     else if (request.message === "from-auth-script.js") {
         chrome.storage.local.set({ token: request.token })
@@ -35,6 +80,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
                 let storageObj = await chrome.storage.local.get(["token"])
 
                 const authToken = storageObj.token
+
+                console.log(authToken);
 
                 if (!authToken) {
                     sendResponse({ message: "not logged in" })
@@ -83,10 +130,3 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 
 })
-
-
-chrome.runtime.onInstalled.addListener(function (details) {
-
-})
-
-chrome.runtime.setUninstallURL("")

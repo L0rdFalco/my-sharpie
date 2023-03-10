@@ -24,8 +24,7 @@
             "256": "./res/icon256.png",
             "512": "./res/icon512.png"
         },
-        "default_title": "my sharpie",
-        "default_popup": "/popup/popup.html"
+        "default_title": "my sharpie"
     },
     "options_page": "/options/options.html",
     "content_scripts": [
@@ -59,20 +58,20 @@
                 "*://*/*"
             ],
             "resources": [
-                "main.css",
-                "marker.png",
-                "eraser.png",
-                "save.png",
-                "pointer.png",
-                "highlighter.png",
-                "clear.png",
-                "undo.png",
-                "redo.png",
-                "move.png",
-                "text.png",
-                "line.png",
-                "exit.png",
-                "cup-border.png"
+                "/content/content-style.css",
+                "/res/marker.png",
+                "/res/eraser.png",
+                "/res/save.png",
+                "/res/pointer.png",
+                "/res/highlighter.png",
+                "/res/clear.png",
+                "/res/undo.png",
+                "/res/redo.png",
+                "/res/move.png",
+                "/res/text.png",
+                "/res/line.png",
+                "/res/exit.png",
+                "/res/cup-border.png"
             ]
         }
     ]
