@@ -1,0 +1,30 @@
+make any webpage or online pdf into a drawing canvas
+
+with this extension you'll be able to:
+
+1. draw lines
+2. add text
+3. highlight any part of the web page
+4. move around the edits to where you need them
+5. save the edited webpage as a screenshot on your computer
+
+
+use cases
+1. students who need to take notes on a pdf or webpage
+2. freelancers to communicate with clients about where changes are needed
+3. website owners to bring attention to important information to a web page or pdf
+4. hobbyists for making memes
+5. business owners to easily take notes and save them quickly
+6. researchers to highlight and save important information 
+7. lecturers or teachers or university instructors when they need to draw, underline or highlight parts 
+of a webpage to students
+
+How to use:
+after installation, click on the extension icon. 
+A palette will appear on the top right corner
+with all the tools available
+It is such an intuitive tool that there's no need to explain which tool to use for what purpose
+Try it for yourself.
+
+
+NB:this is a freemium tool. While the most important and useful features are free, like changing the default color in the options page are not. You can activate the whole extension for a few dollars

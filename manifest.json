@@ -1,7 +1,7 @@
 {
     "name": "my sharpie",
     "description": "activate sharpie and draw things on a webpage for your presentations",
-    "version": "1.0.0.0",
+    "version": "1.0.0.3",
     "manifest_version": 3,
     "icons": {
         "16": "./res/icon16.png",
@@ -45,7 +45,6 @@
     },
     "permissions": [
         "storage",
-        "tabs",
         "scripting",
         "activeTab"
     ],

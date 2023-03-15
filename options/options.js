@@ -60,7 +60,6 @@ async function saveOptionsCallback() {
 
     }
 
-
     else if (res.message === "ZnJlZSB1c2Vyfr") {
 
         let storageObj = await chrome.storage.local.get(["token"])

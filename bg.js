@@ -21,6 +21,7 @@ function x(cb) {
             const res2 = await res1.json()
 
             if (res2.message === "prcHJlbWl1bSB1c2Vy") {
+                chrome.storage.local.set({ state: "prcHJlbWl1bSB1c2Vy" })
                 cb({
                     message: "prcHJlbWl1bSB1c2Vy",
                 })
@@ -112,6 +113,9 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
     }
     else if (request.message === "from-auth-script.js") {
         chrome.storage.local.set({ token: request.token })
+
+        x(sendResponse)
+
     }
     else if (request.message === "from-options-page") {
 

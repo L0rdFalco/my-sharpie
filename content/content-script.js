@@ -22,7 +22,7 @@ function convertHex(g, G = .3) {
     return "rgba(" + g + "," + H + "," + d + "," + G + ")"
 }
 
-function init(g) {
+async function init(g) {
     function G(a, c) {
         console.log("G");
         a.style.background = ""
@@ -202,7 +202,19 @@ function init(g) {
     var k = document.createElement("div");
     k.id = "mySharpie_draggable";
     document.body.appendChild(k);
-    k.innerHTML = '<div id="mySharpie_color"><div class="mySharpie_title">Color</div><input id="mySharpie_colorSelect" type="color" value="#FF0000"></div><div id="mySharpie_tools"><div class="mySharpie_title mySharpie_toolsTitle">Tools</div><div class="mySharpie_toolDiv"><a id="mySharpie_pen" class="mySharpie_tool"><img id="mySharpie_penImg" class="mySharpie_icon" alt="Marker" title="Marker"></img></a><a id="mySharpie_highlighter" class="mySharpie_tool"><img id="mySharpie_highlighterImg" class="mySharpie_icon" alt="Highlighter" title="Highlighter"></img></a><a id="mySharpie_eraser" class="mySharpie_tool"><img id="mySharpie_eraserImg" class="mySharpie_icon" alt="Eraser" title="Eraser"></img></a><a id="mySharpie_pointer" class="mySharpie_tool"><img id="mySharpie_pointerImg" class="mySharpie_icon" alt="Pointer" title="Pointer"></img></a><a id="mySharpie_text" class="mySharpie_tool"><img id="mySharpie_textImg" class="mySharpie_icon" alt="Text" title="Text"></img></a><a id="mySharpie_move" class="mySharpie_tool"><img id="mySharpie_moveImg" class="mySharpie_icon" alt="Move" title="Move"></img></a><a id="mySharpie_line" class="mySharpie_tool"><img id="mySharpie_lineImg" class="mySharpie_icon" alt="Line" title="Line"></img></a><a id="mySharpie_save" class="mySharpie_tool"><img id="mySharpie_saveImg" class="mySharpie_icon" alt="Save" title="Save Drawing"></img></a><a id="mySharpie_undo" class="mySharpie_tool"><img id="mySharpie_undoImg" class="mySharpie_icon" alt="Undo" title="Undo"></img></a><a id="mySharpie_redo" class="mySharpie_tool"><img id="mySharpie_redoImg" class="mySharpie_icon" alt="Redo" title="Redo"></img></a><a id="mySharpie_clear" class="mySharpie_tool"><img id="mySharpie_clearImg" class="mySharpie_icon" alt="Clear" title="Clear"></img></a><a id="mySharpie_exit" class="mySharpie_tool"><img id="mySharpie_exitImg" class="mySharpie_icon" alt="Exit" title="Exit"></img></a></div></div><div id="mySharpie_size"><div class="mySharpie_title">Size</div><input type="range" id="mySharpie_thicknessSlider" value="5" max="60" min="1"></div>';
+    let storageObj = await chrome.storage.local.get(["state"])
+
+    console.log(storageObj);
+    if (storageObj.state === "prcHJlbWl1bSB1c2Vy") {
+        k.innerHTML = '<div id="mySharpie_color"><div class="mySharpie_title">Color</div><input id="mySharpie_colorSelect" type="color" value="#FF0000"></div><div id="mySharpie_tools"><div class="mySharpie_title mySharpie_toolsTitle">Tools</div><div class="mySharpie_toolDiv"><a id="mySharpie_pen" class="mySharpie_tool"><img id="mySharpie_penImg" class="mySharpie_icon" alt="Marker" title="Marker"></img></a><a id="mySharpie_highlighter" class="mySharpie_tool"><img id="mySharpie_highlighterImg" class="mySharpie_icon" alt="Highlighter" title="Highlighter"></img></a><a id="mySharpie_eraser" class="mySharpie_tool"><img id="mySharpie_eraserImg" class="mySharpie_icon" alt="Eraser" title="Eraser"></img></a><a id="mySharpie_pointer" class="mySharpie_tool"><img id="mySharpie_pointerImg" class="mySharpie_icon" alt="Pointer" title="Pointer"></img></a><a id="mySharpie_text" class="mySharpie_tool"><img id="mySharpie_textImg" class="mySharpie_icon" alt="Text" title="Text"></img></a><a id="mySharpie_move" class="mySharpie_tool"><img id="mySharpie_moveImg" class="mySharpie_icon" alt="Move" title="Move"></img></a><a id="mySharpie_line" class="mySharpie_tool"><img id="mySharpie_lineImg" class="mySharpie_icon" alt="Line" title="Line"></img></a><a id="mySharpie_save" class="mySharpie_tool"><img id="mySharpie_saveImg" class="mySharpie_icon" alt="Save" title="Save Drawing"></img></a><a id="mySharpie_undo" class="mySharpie_tool"><img id="mySharpie_undoImg" class="mySharpie_icon" alt="Undo" title="Undo"></img></a><a id="mySharpie_redo" class="mySharpie_tool"><img id="mySharpie_redoImg" class="mySharpie_icon" alt="Redo" title="Redo"></img></a><a id="mySharpie_clear" class="mySharpie_tool"><img id="mySharpie_clearImg" class="mySharpie_icon" alt="Clear" title="Clear"></img></a><a id="mySharpie_exit" class="mySharpie_tool"><img id="mySharpie_exitImg" class="mySharpie_icon" alt="Exit" title="Exit"></img></a></div></div><div id="mySharpie_size"><div class="mySharpie_title">Size</div><input type="range" id="mySharpie_thicknessSlider" value="5" max="60" min="1"></div> ';
+
+    }
+    else {
+        console.log("here");
+
+        k.innerHTML = '<div id="mySharpie_color"><div class="mySharpie_title">Color</div><input id="mySharpie_colorSelect" type="color" value="#FF0000"></div><div id="mySharpie_tools"><div class="mySharpie_title mySharpie_toolsTitle">Tools</div><div class="mySharpie_toolDiv"><a id="mySharpie_pen" class="mySharpie_tool"><img id="mySharpie_penImg" class="mySharpie_icon" alt="Marker" title="Marker"></img></a><a id="mySharpie_highlighter" class="mySharpie_tool"><img id="mySharpie_highlighterImg" class="mySharpie_icon" alt="Highlighter" title="Highlighter"></img></a><a id="mySharpie_eraser" class="mySharpie_tool"><img id="mySharpie_eraserImg" class="mySharpie_icon" alt="Eraser" title="Eraser"></img></a><a id="mySharpie_pointer" class="mySharpie_tool"><img id="mySharpie_pointerImg" class="mySharpie_icon" alt="Pointer" title="Pointer"></img></a><a id="mySharpie_text" class="mySharpie_tool"><img id="mySharpie_textImg" class="mySharpie_icon" alt="Text" title="Text"></img></a><a id="mySharpie_move" class="mySharpie_tool"><img id="mySharpie_moveImg" class="mySharpie_icon" alt="Move" title="Move"></img></a><a id="mySharpie_line" class="mySharpie_tool"><img id="mySharpie_lineImg" class="mySharpie_icon" alt="Line" title="Line"></img></a><a id="mySharpie_save" class="mySharpie_tool"><img id="mySharpie_saveImg" class="mySharpie_icon" alt="Save" title="Save Drawing"></img></a><a id="mySharpie_undo" class="mySharpie_tool"><img id="mySharpie_undoImg" class="mySharpie_icon" alt="Undo" title="Undo"></img></a><a id="mySharpie_redo" class="mySharpie_tool"><img id="mySharpie_redoImg" class="mySharpie_icon" alt="Redo" title="Redo"></img></a><a id="mySharpie_clear" class="mySharpie_tool"><img id="mySharpie_clearImg" class="mySharpie_icon" alt="Clear" title="Clear"></img></a><a id="mySharpie_exit" class="mySharpie_tool"><img id="mySharpie_exitImg" class="mySharpie_icon" alt="Exit" title="Exit"></img></a></div></div><div id="mySharpie_size"><div class="mySharpie_title">Size</div><input type="range" id="mySharpie_thicknessSlider" value="5" max="60" min="1"></div><button id="activate_button">log in and activate full version</button>';
+    }
+
     k.style.top = v + "px";
     0 == Math.floor(2 * Math.random())
     k.addEventListener("mousedown",
@@ -224,6 +236,12 @@ function init(g) {
             window.addEventListener("mouseup", e);
             window.addEventListener("contextmenu", e)
         });
+
+    let button_activate = document.getElementById("activate_button")
+
+    if (button_activate) button_activate.addEventListener("click", function (e) {
+        window.open("https://app-backend-gkbi.onrender.com/auth", "_blank")
+    })
     var R =
         document.querySelectorAll(".mySharpie_tool");
     R.forEach(function (a, c) {
